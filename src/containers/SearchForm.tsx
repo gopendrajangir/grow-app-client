@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 
@@ -28,9 +28,14 @@ const SearchForm: React.FC<SearchFormProps> = ({
   setPage,
   ...props
 }) => {
+  const [searching, setSearching] = useState(false);
   const { register, handleSubmit } = useForm<FormValues>();
 
   const { loading } = useSelector((state: RootState) => state.employees);
+
+  useEffect(() => {
+    if (!loading) setSearching(false);
+  }, [loading, setSearching]);
 
   return (
     <form
@@ -38,6 +43,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
       onSubmit={handleSubmit((data) => {
         setPage(1);
         setSearchData(data);
+        setSearching(true);
       })}
       className={`flex flex-wrap gap-y-2 items-end justify-start w-full text-sm gap-x-2 ${props.className}`}
     >
@@ -71,8 +77,8 @@ const SearchForm: React.FC<SearchFormProps> = ({
           />
         </FormGroup>
       </div>
-      <Button type="submit" disabled={loading} className="">
-        {loading ? <Loader height="30" width="30" /> : 'Search'}
+      <Button type="submit" disabled={loading || searching} className="">
+        {searching ? <Loader height="30" width="30" /> : 'Search'}
       </Button>
     </form>
   );
