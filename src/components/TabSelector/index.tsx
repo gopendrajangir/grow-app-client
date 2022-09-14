@@ -1,5 +1,5 @@
 import React, { useState, useRef, HTMLAttributes, ReactElement } from 'react';
-import Tab, { TabProps } from './Tab';
+import { TabProps } from './Tab';
 
 interface TabSelectorProps extends HTMLAttributes<HTMLDivElement> {
   defaultTab?: number;

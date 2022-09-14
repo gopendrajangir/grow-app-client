@@ -1,6 +1,6 @@
 import React from "react"
 
-export default (glider: React.MutableRefObject<HTMLDivElement | null>, previousTab: React.MutableRefObject<HTMLButtonElement | null>, currentTab: React.RefObject<HTMLButtonElement>) => {
+const slideGlider = (glider: React.MutableRefObject<HTMLDivElement | null>, previousTab: React.MutableRefObject<HTMLButtonElement | null>, currentTab: React.RefObject<HTMLButtonElement>) => {
   if (glider.current && previousTab.current && currentTab.current) {
     glider.current.animate([
       {
@@ -15,3 +15,5 @@ export default (glider: React.MutableRefObject<HTMLDivElement | null>, previousT
     });
   }
 }
+
+export default slideGlider;

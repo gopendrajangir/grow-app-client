@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
-import NavigationBar from './components/NavigationBar';
-
 import { ThemeContext } from './context/themeContext';
+
+import NavigationBar from './components/NavigationBar';
 
 import HomePage from './pages/HomePage';
 

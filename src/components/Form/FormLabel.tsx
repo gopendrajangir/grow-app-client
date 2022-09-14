@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, PropsWithChildren } from 'react';
+import React, { HTMLAttributes } from 'react';
 
 interface FormLabelProps extends HTMLAttributes<HTMLLabelElement> {
   htmlFor: string;

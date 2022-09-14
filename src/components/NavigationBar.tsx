@@ -1,9 +1,7 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import Logo from '../assets/img/logo.png';
-import Icon from './Icon';
-import LinkButton from './LinkButton';
 
 import ThemeSeletor from './ThemeSeletor';
 import { ThemeContext } from '../context/themeContext';

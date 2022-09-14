@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { FormValues } from '../containers/SearchForm';
 
-export const baseUrl = process.env.NODE_ENV === 'production' ? "https://grow-app-server.herokuapp.com/" : "http://localhost:8080";
+export const baseUrl = process.env.NODE_ENV === 'production' ? "https://grow-app-server.herokuapp.com" : "http://localhost:8080";
 
 export const getAllEmployees = (page: number, limit: number, searchData: FormValues) => {
   let queryString = '';

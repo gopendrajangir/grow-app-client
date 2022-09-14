@@ -1,10 +1,4 @@
-import React, {
-  PropsWithChildren,
-  Dispatch,
-  SetStateAction,
-  useRef,
-  HTMLAttributes,
-} from 'react';
+import React, { Dispatch, SetStateAction, useRef, HTMLAttributes } from 'react';
 import { useEffect } from 'react';
 import slideGlider from './slideGlider';
 
@@ -37,7 +31,7 @@ const Tab: React.FC<TabProps> = ({
     if (selectedTabIdx === index && previousSelectedTabRef && selectedTabRef) {
       slideGlider(gliderRef, previousSelectedTabRef, selectedTabRef);
     }
-  }, [selectedTabIdx]);
+  }, [selectedTabIdx, index, selectedTabRef, previousSelectedTabRef]);
 
   return (
     <button
@@ -48,7 +42,7 @@ const Tab: React.FC<TabProps> = ({
           previousSelectedTabRef &&
           selectedTabRef &&
           setSelectedTabIdx &&
-          (index == 0 || index) &&
+          (index === 0 || index) &&
           clickHandler
         ) {
           previousSelectedTabRef.current = selectedTabRef.current;

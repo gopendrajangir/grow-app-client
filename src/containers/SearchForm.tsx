@@ -1,13 +1,15 @@
 import React, { HTMLAttributes } from 'react';
-
+import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import Button from '../components/shared/Button';
-import FormGroup from '../components/Form/FormGroup';
 
+import Button from '../shared/Button';
+
+import FormGroup from '../components/Form/FormGroup';
 import FormInput from '../components/Form/FormInput';
 import FormLabel from '../components/Form/FormLabel';
-import { fetchEmployees } from '../slices/employeesSlice';
-import { useAppDispatch } from '../store';
+
+import { RootState } from '../store';
+import Loader from '../components/Loader';
 
 export type FormValues = {
   firstname?: string;
@@ -23,6 +25,8 @@ interface SearchFormProps extends HTMLAttributes<HTMLFormElement> {
 const SearchForm: React.FC<SearchFormProps> = ({ setSearchData, ...props }) => {
   const { register, handleSubmit } = useForm<FormValues>();
 
+  const { loading } = useSelector((state: RootState) => state.employees);
+
   return (
     <form
       {...props}
@@ -33,25 +37,25 @@ const SearchForm: React.FC<SearchFormProps> = ({ setSearchData, ...props }) => {
     >
       <div className="flex flex-wrap gap-y-2 items-end justify-start text-sm gap-x-2">
         <FormGroup className="!flex-row items-center gap-x-2 w-min">
-          <FormLabel className="w-20 md:w-max" htmlFor="firstname">
+          <FormLabel className="w-20 lg:w-max" htmlFor="firstname">
             First Name:
           </FormLabel>
           <FormInput type="text" {...register('firstname')} />
         </FormGroup>
         <FormGroup className="!flex-row items-center gap-x-2">
-          <FormLabel className="w-20 md:w-max" htmlFor="lastname">
+          <FormLabel className="w-20 lg:w-max" htmlFor="lastname">
             Last Name:
           </FormLabel>
           <FormInput type="text" {...register('lastname')} />
         </FormGroup>
         <FormGroup className="!flex-row items-center gap-x-2">
-          <FormLabel className="w-20 md:w-max" htmlFor="dob">
+          <FormLabel className="w-20 lg:w-max" htmlFor="dob">
             Date of Birth:
           </FormLabel>
           <FormInput type="date" {...register('dob')} className="text-xs" />
         </FormGroup>
         <FormGroup className="!flex-row items-center gap-x-2">
-          <FormLabel className="w-20 md:w-max" htmlFor="dateEnrolled">
+          <FormLabel className="w-20 lg:w-max" htmlFor="dateEnrolled">
             Date Enrolled:
           </FormLabel>
           <FormInput
@@ -61,8 +65,8 @@ const SearchForm: React.FC<SearchFormProps> = ({ setSearchData, ...props }) => {
           />
         </FormGroup>
       </div>
-      <Button type="submit" className="">
-        Search
+      <Button type="submit" disabled={loading} className="">
+        {loading ? <Loader height="30" width="30" /> : 'Search'}
       </Button>
     </form>
   );

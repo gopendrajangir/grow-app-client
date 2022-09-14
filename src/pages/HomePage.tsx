@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchEmployees({ page, limit, searchData }));
-  }, [page, limit, searchData]);
+  }, [page, limit, searchData, dispatch]);
 
   return (
     <div className="p-5 pt-3 h-full flex flex-col items-center">

@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Employee } from '../../slices/employeesSlice';
-import { useNavigate } from 'react-router-dom';
 
 interface TableBodyProps {
   data: Employee[];

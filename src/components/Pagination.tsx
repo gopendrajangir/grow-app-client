@@ -26,7 +26,7 @@ const Pagination: React.FC<PaginationProps> = ({
     >
       <div className="flex items-center ml-auto mr-auto">
         <button
-          className="bg-sky-800 dark:bg-white dark:fill-slate-800 hover:bg-sky-700 disabled:bg-slate-400 dark:disabled:bg-slate-300 fill-slate-50 hover:bg-slate-200 h-8 w-8 rounded flex items-center justify-center"
+          className="bg-sky-800 dark:bg-white dark:fill-slate-800 hover:bg-sky-700 disabled:bg-slate-400 dark:disabled:bg-slate-600 fill-slate-50 hover:bg-slate-200 h-8 w-8 rounded flex items-center justify-center"
           disabled={page < 2}
           onClick={() => {
             if (page > 1) {
