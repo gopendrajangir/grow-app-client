@@ -23,7 +23,6 @@ const HomePage: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    console.log(page, limit);
     dispatch(fetchEmployees({ page, limit, searchData }));
   }, [page, limit, searchData]);
 

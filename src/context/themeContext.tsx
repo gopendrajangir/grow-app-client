@@ -10,8 +10,6 @@ const ThemeContext = React.createContext<ThemeValue>({ theme: '' });
 const ThemeContextProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [theme, setTheme] = useState('');
 
-  console.log(theme);
-
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}

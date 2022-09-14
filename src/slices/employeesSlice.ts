@@ -9,9 +9,7 @@ type FetchEmployeesArgs = {
 }
 
 export const fetchEmployees = createAsyncThunk('employees', async ({ page = 1, limit = 10, searchData = {} }: FetchEmployeesArgs) => {
-  console.log("Hello", page, limit);
   const response = await getAllEmployees(page, limit, searchData);
-  console.log(response.data);
   return response.data;
 })
 

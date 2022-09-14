@@ -13,7 +13,6 @@ const TableHeader: React.FC = React.memo(() => {
     <thead className="h-10 bg-slate-300 dark:bg-cyan-900 text-slate-900 dark:text-slate-300">
       <tr>
         {headings.map((heading) => {
-          console.log(heading);
           return (
             <th
               key={heading}

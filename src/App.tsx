@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import NavigationBar from './components/NavigationBar';
 
@@ -9,7 +9,6 @@ import HomePage from './pages/HomePage';
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
-  console.log(theme);
   return (
     <div className={`${theme} h-screen max-h-screen`}>
       <Router>
