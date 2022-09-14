@@ -36,8 +36,8 @@ const Pagination: React.FC<PaginationProps> = ({
           }}
         >
           <Icon
-            icon="minus"
-            className="h-4 w-5 flex items-center justify-center"
+            icon="keyboard_arrow_left"
+            className="h-5 w-5 flex items-center justify-center"
           />
         </Button>
 
@@ -54,7 +54,7 @@ const Pagination: React.FC<PaginationProps> = ({
           className="h-8 w-8 !p-0 justify-center"
         >
           <Icon
-            icon="add"
+            icon="keyboard_arrow_right"
             className="h-5 w-5 flex items-center justify-center"
           />
         </Button>
