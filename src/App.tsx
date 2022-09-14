@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
+import NavigationBar from './components/NavigationBar';
+
+import { ThemeContext } from './context/themeContext';
+
+import HomePage from './pages/HomePage';
+
+const App = () => {
+  const { theme } = useContext(ThemeContext);
+  console.log(theme);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`${theme} h-screen max-h-screen`}>
+      <Router>
+        <NavigationBar />
+        <div className="max-h-[calc(100vh-64px)] h-[calc(100vh-64px)] bg-slate-50 dark:bg-slate-800">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+        </div>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
