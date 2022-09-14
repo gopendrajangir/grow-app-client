@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/grow-app-client/static/css/main.f64e05c6.css",
-    "main.js": "/grow-app-client/static/js/main.12effe87.js",
+    "main.css": "/grow-app-client/static/css/main.f6c0de9e.css",
+    "main.js": "/grow-app-client/static/js/main.08696bae.js",
     "static/media/sprite.svg": "/grow-app-client/static/media/sprite.d424c0843aef33698faa60db9a4dec08.svg",
     "index.html": "/grow-app-client/index.html",
-    "main.f64e05c6.css.map": "/grow-app-client/static/css/main.f64e05c6.css.map",
-    "main.12effe87.js.map": "/grow-app-client/static/js/main.12effe87.js.map"
+    "main.f6c0de9e.css.map": "/grow-app-client/static/css/main.f6c0de9e.css.map",
+    "main.08696bae.js.map": "/grow-app-client/static/js/main.08696bae.js.map"
   },
   "entrypoints": [
-    "static/css/main.f64e05c6.css",
-    "static/js/main.12effe87.js"
+    "static/css/main.f6c0de9e.css",
+    "static/js/main.08696bae.js"
   ]
 }
