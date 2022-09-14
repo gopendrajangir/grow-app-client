@@ -20,9 +20,14 @@ export type FormValues = {
 
 interface SearchFormProps extends HTMLAttributes<HTMLFormElement> {
   setSearchData: React.Dispatch<React.SetStateAction<FormValues>>;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const SearchForm: React.FC<SearchFormProps> = ({ setSearchData, ...props }) => {
+const SearchForm: React.FC<SearchFormProps> = ({
+  setSearchData,
+  setPage,
+  ...props
+}) => {
   const { register, handleSubmit } = useForm<FormValues>();
 
   const { loading } = useSelector((state: RootState) => state.employees);
@@ -31,6 +36,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ setSearchData, ...props }) => {
     <form
       {...props}
       onSubmit={handleSubmit((data) => {
+        setPage(1);
         setSearchData(data);
       })}
       className={`flex flex-wrap gap-y-2 items-end justify-start w-full text-sm gap-x-2 ${props.className}`}

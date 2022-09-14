@@ -28,7 +28,11 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="p-5 pt-3 h-full flex flex-col items-center">
-      <SearchBar className="mb-4 w-full" setSearchData={setSearchData} />
+      <SearchBar
+        className="mb-4 w-full"
+        setSearchData={setSearchData}
+        setPage={setPage}
+      />
       <div className="w-full overflow-auto rounded">
         <table className="table-auto w-full bg-slate-200 dark:bg-slate-700">
           <TableHeader />

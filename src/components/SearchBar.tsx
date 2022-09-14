@@ -4,9 +4,14 @@ import Icon from './Icon';
 
 interface SearchBarProps extends HTMLAttributes<HTMLDivElement> {
   setSearchData: React.Dispatch<React.SetStateAction<FormValues>>;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ setSearchData, ...props }) => {
+const SearchBar: React.FC<SearchBarProps> = ({
+  setSearchData,
+  setPage,
+  ...props
+}) => {
   const [opened, setOpened] = useState(true);
   return (
     <div
@@ -27,7 +32,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ setSearchData, ...props }) => {
           <Icon icon="clear" className="h-6 w-6" />
         )}
       </button>
-      {opened && <SearchForm className="mt-2" setSearchData={setSearchData} />}
+      {opened && (
+        <SearchForm
+          className="mt-2"
+          setSearchData={setSearchData}
+          setPage={setPage}
+        />
+      )}
     </div>
   );
 };
